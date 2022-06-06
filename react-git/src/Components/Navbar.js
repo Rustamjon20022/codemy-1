@@ -7,15 +7,24 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
+import { FaBell } from "react-icons/fa";
+import { FiSettings } from "react-icons/fi";
+import { BsPersonCircle } from "react-icons/bs";
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { Paper } from '@mui/material';
+import Logo from '../Img/logo.png'
+import Paper from '@mui/material/Paper';
+import InputBase from '@mui/material/InputBase';
+import Divider from '@mui/material/Divider';
+// import MenuIcon from '@mui/icons-material/Menu';
 
-const pages = ['About','Blog','Galery','Contact Us'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-const Navbar = () => {
+
+
+const pages = ['Home', 'Men\'s', 'Women\'s', 'Kid\'s','Pages ∨','Features ∨','Explore'];
+
+const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -35,20 +44,29 @@ const Navbar = () => {
   };
 
   return (
-      <Paper  style={{borederRadius:"3px"}}>
-    <AppBar position="static" color="default">
+    <AppBar position="static" sx={{ backgroundColor: 'white',}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ mr: 10, display: { xs: 'none', md: 'flex' } }}
+            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            Home
+            <img src={Logo} style={{ width: '135px', height: 35, }} />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="primary"
+            >
+              <MenuIcon />
+            </IconButton>
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -80,169 +98,21 @@ const Navbar = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            Home
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            <img src={Logo} style={{ width: 135, height: 35,backgroundSize:'100%' }} />          </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, marginLeft: '20%' }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', display: 'block' }}
+                sx={{ my: 2, color: 'black', display: 'block', ml: '4%',fontSize:'12px' ,fontFamily:'sans-serif'}}
               >
                 {page}
               </Button>
             ))}
           </Box>
-
-          <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
-            <Tooltip title="Open settings">
-                
-              <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-
-
-
-
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
         </Toolbar>
       </Container>
     </AppBar>
-    </Paper>
   );
 };
-export default Navbar;
-
-
-
-
-
-
-// import { Link } from "@mui/material";
-// import { useState } from "react";
-// import { Hidden } from "@mui/material";
-// import { styled } from "@mui/material/styles";
-// import AppBar from "@mui/material/AppBar";
-// import Toolbar from "@mui/material/Toolbar";
-// import { IconButton } from "@mui/material";
-// import MenuIcon from "@mui/icons-material/Menu";
-// import { SwipeableDrawer } from "@mui/material";
-// import { Divider } from "@mui/material";
-// import { List } from "@mui/material";
-// import { Paper } from "@mui/material";
-// import { ListItem } from "@mui/material";
-// import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-
-
-
-// const navigationLinks = [
-//   { name: "Home", href: "" },
-//   { name: "Servises", href: "" },
-//   { name: "Blog", href: "" },
-//   { name: "Galery", href: "" },
-//   { name: "Contact Us", href: "" },
-// ];
-// const useStyles = styled((theme) => ({
-//   link: {
-//     marginRight: 20,
-//   },
-// }));
-
-// const Navbar = () => {
-//   const styles = useStyles();
-//   const [open, setOpen] = useState(false);
-//   return (
-//           <Paper>
-//       <AppBar position="sticky" color="default">
-//         <Toolbar dissableGutters
-//           style={{ paddingLeft:"10%", gap:"1rem"}}
-//         >
-//           <Hidden xsDown>
-//             {navigationLinks.map((item) => (
-//               <Link
-//                 className={styles.link}
-//                 color="textPrimary"
-//                 variant="button"
-//                 umderline="none"
-//                 href={item.href}
-//                 >
-//                 {item.name}
-//               </Link>
-//             ))}
-//           </Hidden>
-//           <Hidden smUp>
-//             <IconButton>
-//               <MenuIcon onClick={() => setOpen(true)} />
-//             </IconButton>
-//           </Hidden>
-//         </Toolbar>
-//       <SwipeableDrawer
-//         anchor="right"
-//         open={open}
-//         onOpen={() => setOpen(true)}
-//         onClose={() => setOpen(false)}
-//       >
-//         <div>
-//           <IconButton>
-//             <ArrowForwardIosIcon onClick={() => setOpen(false)} />
-//           </IconButton>
-//         </div>
-//         <Divider />
-//         <List>
-//           {navigationLinks.map((item) => (
-//             <ListItem>
-//               <Link
-//                 className={styles.link}
-//                 color="textPrimary"
-//                 variant="button"
-//                 umderline="none"
-//                 href={item.href}
-//               >
-//                 {item.name}
-//               </Link>
-//             </ListItem>
-//           ))}
-//         </List>
-//       </SwipeableDrawer>
-
-
-
-
-
-//     </AppBar>
-//       </Paper>
-//   );
-// };
-
-// export default Navbar;
-
+export default ResponsiveAppBar;
