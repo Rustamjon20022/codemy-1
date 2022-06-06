@@ -1,80 +1,126 @@
-import * as React from "react";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
+import {
+  Card,
+  CardMedia,
+  Container,
+  Grid,
+  Paper,
+  Typography,
+  CardContent,
+} from "@mui/material";
 import { Box } from "@mui/system";
-import { Grid, IconButton } from "@mui/material";
-import { VscSearch } from "react-icons/vsc";
-import { MdDataSaverOn } from "react-icons/md";
-import { AiFillMail } from "react-icons/ai";
+import React from "react";
 
-export default function Banner() {
+const Banner = () => {
   return (
-    <Box sx={{ position: "relative"}}
-    pt={{lg:"40%",md:"45%",sm:"205%",xs:"290%"}}
+    <>
+      <Container sx={{ paddingTop: "0%"}}
+        pl={{lg:"3%",md:0,sm:0,xs:0}}
+        pr={{lg:"3%",md:0,sm:0,xs:0}}
+      >
+        <Paper
+          sx={{ paddingTop: "3%" }}
+          pl={{lg:"4%",md:0,sm:0,xs:0}}
+          pr={{lg:"4%",md:0,sm:0,xs:0}}
 
-    >
-      <Box sx={{position:"absolute",paddingLeft:"8%"}}>
-        <Grid container spacing={2}>
-          <Grid item lg={6} md={6}sm={12}xs={12}>
-        
-        <Typography variant="h4"  >
-          Cardboard allequen aget tables id porta
-        </Typography>
-        <br />
-        <Typography sx={{color:"rgb(94, 94, 191)"}} >
-          Suspendisse eu lorem massa Integer Sit amet <br /> posuere tellus,
-        </Typography><br />
-        <Typography variant="h6">
-          <IconButton sx={{fontSize:"40px",color:"blue"}} >
-         <VscSearch  /> 
-          </IconButton>
-         Nulla untrices risus aget tables 
-        </Typography>
-        <Typography sx={{paddingLeft:"10%",color:"rgb(94, 94, 191)"}} >
-          Suspendisse eu lorem massa Integer Sit amet posuere tellus,<br />
-          Download,modly and
-        </Typography>
+        >
+          <Box
+            sx={{
+              border: "1px solid blue",
+              paddingTop: "3%",
+              paddingBottom: "3%",
+            }}
+            pl={{lg:"3%",md:"2%",sm:"1%",xs:"1%"}}
+            pr={{lg:"3%",md:"2%",sm:"1%",xs:"1%"}}
 
-        <Typography variant="h6">
-        <IconButton sx={{fontSize:"40px",color:"blue"}} >
+          >
+            <Grid container spacing={2}>
+              <Grid lg={8} md={6} sm={12} xs={12}>
+                <Box
+                  sx={{
+                    position: "absolute",
+                    maxWidth: "50%",
+                
+                    color: "white",
+                  }}
+                  pl={{lg:"3%",md:"1%",sm:"1%",xs:"1%"}}
+                  pr={{lg:"3%",md:"1%",sm:"1%",xs:"1%"}}
+                  pt={{lg:"25%",md:"23%",sm:"20%",xs:"10%"}}
 
-          <MdDataSaverOn />
-          </IconButton>
-          Nulla untrices risus aget tables 
+                >
+                  <Typography variant="h5">
+                    Lorem ipsum dolor sit amet
+                  </Typography>
+                  <Typography>
+                    Lorem ipsum dolor sit amet ipsum dolor sit frenquensy
+                    apolorado emigine aecada indalete amet ipsum dolor sit amet
+                    ipsum dolor sit amet
+                  </Typography>
+                </Box>
+                <Box>
+                  <Card sx={{ minWidth: 350, minHeight: 100 }}>
+                    <CardMedia
+                      component="img"
+                      image="/images/content_slider/image1-small.jpg"
+                      alt="green iguana"
+                    />
+                  </Card>
+                </Box>
+              </Grid>
+              <Grid lg={4} md={6} sm={12} xs={12}>
+              <Card sx={{ display: "flex", }}>
+                <Box sx={{ flexDirection: "column" }}>
+                  <CardContent>
+                    <CardMedia
+                      component="img"
+                      sx={{ width: 151 }}
+                      image="/images/content_slider/image4-small.jpg"
+                    />
+                  </CardContent>
+                </Box>
+                <Typography sx={{ paddingTop: "4%" }}>
 
-        </Typography>
-
-        <Typography sx={{paddingLeft:"10%",color:"rgb(94, 94, 191)"}} >
-          Suspendisse eu lorem massa Integer Sit amet posuere tellus,<br />
-          Download,modly and
-        </Typography>
-        <Typography variant="h6">
-        <IconButton sx={{fontSize:"40px",color:"blue"}}>
-
-        <AiFillMail />
-        </IconButton>
-          Nulla untrices risus aget tables 
-        </Typography>
-        <Typography sx={{paddingLeft:"10%",color:"rgb(94, 94, 191)"}} >
-          Suspendisse eu lorem massa Integer Sit amet posuere tellus,<br />
-          Download,modly and
-        </Typography>
-
-        </Grid>
-        <Grid item lg={6} md={6}sm={12}xs={12}>
-          <Box sx={{paddingTop:"10%",paddingBottom:"30%"}} >
-        <CardMedia
-          component="img"
-          height="350px"
-          width="30%"
-          image="/images/right-image.png"
-          alt="green iguana"
-        />
-        </Box>
-
-        </Grid>
-        </Grid>
-        </Box>
-    </Box>
+                  Live From Spacedolor sitamet 
+                  Mac Miller inds
+                </Typography>
+                  <del></del>
+              </Card>
+              <Card sx={{ display: "flex", }}>
+                <Box sx={{ flexDirection: "column" }}>
+                  <CardContent>
+                    <CardMedia
+                      component="img"
+                      sx={{ width: 151 }}
+                      image="/images/content_slider/image2-small.jpg"
+                    />
+                  </CardContent>
+                </Box>
+                <Typography sx={{ paddingTop: "4%" }}>
+                  Live From Spacedolor sitamet <br />
+                  Mac Miller inds
+                </Typography>
+              </Card>
+              <Card sx={{ display: "flex", }}>
+                <Box sx={{ flexDirection: "column" }}>
+                  <CardContent>
+                    <CardMedia
+                      component="img"
+                      sx={{ width: 151 }}
+                      image="/images/content_slider/image3-small.jpg"
+                    />
+                  </CardContent>
+                </Box>
+                <Typography sx={{ paddingTop: "4%" }}>
+                  Live From Spacedolor sitamet <br />
+                  Mac Miller inds
+                </Typography>
+              </Card>
+              </Grid>
+            </Grid>
+          </Box>
+        </Paper>
+      </Container>
+    </>
   );
-}
+};
+
+export default Banner;

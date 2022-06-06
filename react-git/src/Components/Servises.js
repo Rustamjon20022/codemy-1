@@ -1,49 +1,111 @@
-import * as React from "react";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { Box } from "@mui/system";
-import { Grid } from "@mui/material";
-import Button from "@mui/material/Button";
+import React from 'react';
+import {
+    Card,
+    Container,
+    Grid,
+    Typography,
+    CardContent,
+    Button
+  } from "@mui/material";
+import CardHeader from '@mui/material/CardHeader';
+import CardActions from '@mui/material/CardActions';
+import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
+import MonitorIcon from '@mui/icons-material/Monitor';
+import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
 
+const Servises = () => {
 
-export default function Servises() {
+  
+
   return (
-    <Box sx={{ position: "relative" }}>
-      <Box sx={{position:"absolute",paddingLeft:"8%"}}
-      mt={{lg:"5%",md:"5%",sm:"36%",xs:"50%"}}
-      >
-        <Grid container spacing={2}>
-        <Grid item lg={6} md={6}sm={12}xs={12}>
-          <Box sx={{paddingTop:"10%",paddingBottom:"30%"}} >
-        <CardMedia
-          component="img"
-          height="350px"
-          width="30%"
-          image="/images/left-image.png"
-          alt="green iguana"
-        />
-        </Box>
-
-        </Grid>
-
-          <Grid item lg={6} md={6}sm={12}xs={12}>
+    <>
+      <Container sx={{paddingTop:"5%"}}>
+      <Grid container spacing={2}>
         
-        <Typography variant="h4"  >
-          Cardboard allequen aget tables id porta
+  <Grid item lg={4} md={4} sm={6} xs={12}>
+  <Card sx={{ minWidth: "33%" }}>
+      <CardHeader
+        avatar={
+          <AutoFixHighIcon />
+        }
+        title="Web Design"
+      />
+    
+      <CardContent>
+        <Typography variant="body2" color="text.secondary">
+          This impressive paella is a perfect party dish and a fun meal to cook
+          together with your guests. Add 1 cup of frozen peas along with the mussels,
+          if you like.
         </Typography>
-        <br />
-        <Typography sx={{color:"rgb(94, 94, 151)"}} >
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into ele        </Typography><br />
-        <Typography sx={{color:"rgb(94, 94, 151)"}} >
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into ele
-        </Typography><br />
-        <Button size="large" variant="contained" sx={{borderRadius:"20px"}}>
-            Dicover More
-          </Button>
+      </CardContent>
+      <CardActions sx={{paddingLeft:"75%"}} >
+        <Button size="large" variant="contained" color="secondary">
+          More
+        </Button>
+      </CardActions>
 
-        </Grid>
-        </Grid>
-        </Box>
-    </Box>
+    </Card>
+
+  </Grid>
+
+  <Grid item lg={4} md={4} sm={6} xs={12}>
+  <Card sx={{ minWidth: "33%" }}>
+      <CardHeader
+        avatar={
+          <MonitorIcon />
+        }
+        title="Site Monitoring"
+      />
+    
+      <CardContent>
+        <Typography variant="body2" color="text.secondary">
+          This impressive paella is a perfect party dish and a fun meal to cook
+          together with your guests. Add 1 cup of frozen peas along with the mussels,
+          if you like.
+        </Typography>
+      </CardContent>
+      <CardActions sx={{paddingLeft:"75%"}} >
+        <Button size="large" variant="contained" color="secondary">
+          More
+        </Button>
+      </CardActions>
+
+    </Card>
+
+  </Grid>
+
+  <Grid item lg={4} md={4} sm={6} xs={12}>
+  <Card sx={{ minWidth: "33%" }}>
+      <CardHeader
+        avatar={
+          <SportsSoccerIcon />
+        }
+        title="Global Reching"
+      />
+    
+      <CardContent>
+        <Typography variant="body2" color="text.secondary">
+          This impressive paella is a perfect party dish and a fun meal to cook
+          together with your guests. Add 1 cup of frozen peas along with the mussels,
+          if you like.
+        </Typography>
+      </CardContent>
+      <CardActions sx={{paddingLeft:"75%"}} >
+        <Button size="large" variant="contained" color="secondary">
+          More
+        </Button>
+      </CardActions>
+
+    </Card>
+
+  </Grid>
+</Grid>
+
+
+
+      </Container>
+    </>
   );
 }
+
+export default Servises;
